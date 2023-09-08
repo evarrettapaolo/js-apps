@@ -695,32 +695,41 @@
 // console.log("This is from formatTime: " + formatTime(new Date()));
 
 //Clock Program
-
 //Html tag
-const myLabel = document.querySelector("#myLabel");
-
-//Function
-function update() {
-    let date = new Date();
-    myLabel.innerHTML = formatTime(date);
+// const myLabel = document.querySelector("#myLabel");
+// //Function
+// function update() {
+//     let date = new Date();
+//     myLabel.innerHTML = formatTime(date);
     
-    function formatTime() {
-        let hours = date.getHours();
-        let minutes = date.getMinutes();
-        let seconds = date.getSeconds();
-        let amOrPm = hours >= 12 ? "pm" : "am";
-        hours = (hours % 12) || 12;
-        minutes = formatZeroes(minutes);
-        seconds = formatZeroes(seconds);
+//     function formatTime() {
+//         let hours = date.getHours();
+//         let minutes = date.getMinutes();
+//         let seconds = date.getSeconds();
+//         let amOrPm = hours >= 12 ? "pm" : "am";
+//         hours = (hours % 12) || 12;
+//         minutes = formatZeroes(minutes);
+//         seconds = formatZeroes(seconds);
 
-        return `${hours}:${minutes}:${seconds} ${amOrPm}`;
-    }
-    
-    function formatZeroes(time) {
-        time = time.toString();
-        return time.length < 2 ? "0" + time : time;
-    }
-}
+//         return `${hours}:${minutes}:${seconds} ${amOrPm}`;
+//     }
+//     function formatZeroes(time) {
+//         time = time.toString();
+//         return time.length < 2 ? "0" + time : time;
+//     }
+// }
+// //Invoke function with setInterval
+// setInterval(update, 1000);
 
-//Invoke function with setInterval
-setInterval(update, 1000);
+//Asynchronous and Synchronous code
+//Synchronous 
+console.log("Synchronous:");
+console.log("Start");
+console.log("This step is synchronous");
+console.log("End");
+
+//Asynchronous
+console.log("Asynchronous:");
+console.log("Start");
+setTimeout(() => console.log("This is asynchronous"), 3000);clearInterval
+console.log("End");
