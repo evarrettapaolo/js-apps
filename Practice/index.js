@@ -644,3 +644,59 @@
 //         clearInterval(myTimer);
 //     }
 // }
+
+//Date objects
+let date1 = new Date();
+let date2 = new Date(0);
+let date3 = new Date(2023, 0, 1, 2, 3, 4, 5);
+let date4 = new Date();
+
+//Date object get properties 
+let year = date1.getFullYear();
+let dayOfMonth = date1.getDate(); //Day of the month
+let dayOfWeek = date1.getDay(); //Day of the week
+let month = date1.getMonth();
+let hour = date1.getHours();
+let minutes = date1.getMinutes();
+let seconds = date1.getSeconds();
+let milliseconds = date1.getMilliseconds();
+
+console.log(year);
+console.log(dayOfMonth);
+console.log(dayOfWeek);
+console.log(month);
+console.log(hour);
+console.log(minutes);
+console.log(seconds);
+console.log(milliseconds);
+
+//Date object set properties
+date1.setFullYear(2024);
+date1.setDate(11);
+
+console.log("Set to: " + date1.getFullYear());
+console.log("Set to: " + date1.getDate());
+
+date1 = date1.toLocaleString(); //Use local time and unit, simpler 
+console.log(date1);
+console.log(date2);
+console.log(date3);
+console.log(date4);
+
+//Function that accepts date object
+function formatDate(date) {
+    let year = date.getFullYear();
+    let month = date.getMonth() + 1; //January is 0
+    let day = date.getDate();
+    return `${month}/${day}/${year}`;
+}
+console.log("This is from formatDate: " + formatDate(date3));
+
+function formatTime(date) {
+    let hours = date.getHours() % 12;
+    let minutes = date.getMinutes();
+    let seconds = date.getSeconds();
+    let amOrPm = hours >= 12 ? "pm" : "am";
+    return `${hours}:${minutes}:${seconds} ${amOrPm}`;
+}
+console.log("This is from formatTime: " + formatTime(new Date()));
