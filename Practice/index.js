@@ -796,24 +796,66 @@
 //     .catch(error => console.log(error))
 
 //Await
-async function loadFile() {
-    let fileLoaded = false;  
-    if(fileLoaded) {
-        return "File loaded";
-    }
-    else {
-        throw "File NOT loaded";
-    }
-}
+// async function loadFile() {
+//     let fileLoaded = false;  
+//     if(fileLoaded) {
+//         return "File loaded";
+//     }
+//     else {
+//         throw "File NOT loaded";
+//     }
+// }
+// //For displaying - await must be enclose in an async function
+// async function startProcess() { 
+//     try{ //Required when promise was failed
+//         let message = await loadFile(); //Replaces then() and catch()
+//         console.log(message);
+//     }
+//     catch(error) {
+//         console.log(error);
+//     }
+// }
+// startProcess();
 
-//For displaying - await must be enclose in an async function
-async function startProcess() { 
-    try{ //Required when promise was failed
-        let message = await loadFile(); //Replaces then() and catch()
-        console.log(message);
+
+//ES6 Modules
+// import { PI, getCircumference, getArea } from "./math_util.js";
+// import * as MathUtl from "./math_util.js"; //Alias or namespace added
+
+// console.log(MathUtl.PI); //Using the namespace
+// console.log(PI);
+
+// let circumference = getCircumference(10);
+// console.log(circumference);
+
+// let area = getArea(10);
+// console.log(area);
+
+//DOM
+// console.log(document.title);
+// console.log(document.URL);
+
+// document.title = "Title goes here!";
+// document.location = "https://www.google.com";
+// document.body.style.backgroundColor = "skyblue";
+
+//Element Selector
+//Get using Id attribute
+let element = document.querySelector("#myTitle");
+console.log(element.innerHTML);
+
+//Get using name attribute
+let fruits = document.querySelectorAll("input[name='fruits']")
+fruits.forEach(fruit => {
+    if(fruit.checked) {
+        console.log(fruit.value);
     }
-    catch(error) {
-        console.log(error);
-    }
-}
-startProcess();
+})
+
+//Get using tag type
+let vegetables = document.querySelectorAll("li");
+vegetables[1].style.backgroundColor = "lightpink"
+
+//Get using class name
+let desserts = document.querySelectorAll(".desserts");
+desserts[0].style.backgroundColor = "lightgreen";
