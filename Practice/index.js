@@ -723,13 +723,97 @@
 
 //Asynchronous and Synchronous code
 //Synchronous 
-console.log("Synchronous:");
-console.log("Start");
-console.log("This step is synchronous");
-console.log("End");
+// console.log("Synchronous:");
+// console.log("Start");
+// console.log("This step is synchronous");
+// console.log("End");
 
-//Asynchronous
-console.log("Asynchronous:");
-console.log("Start");
-setTimeout(() => console.log("This is asynchronous"), 3000);clearInterval
-console.log("End");
+// //Asynchronous
+// console.log("Asynchronous:");
+// console.log("Start");
+// setTimeout(() => console.log("This is asynchronous"), 3000);clearInterval
+// console.log("End");
+
+//Console.Time()
+//Start
+// console.time("Response time");
+// // alert("Click the ok button"); //Synchronous
+// setTimeout(() => console.log("HELLO!"), 3000); //Asynchronous
+// //End
+// console.timeEnd("Response time");
+
+//Promise
+//Example 1 - Two callback function for two possible outcomes
+// const promise = new Promise((resolve, reject) => {
+//     let fileLoaded = false;  
+//     if(fileLoaded) {
+//         resolve("File loaded");
+//     }
+//     else {
+//         reject("File NOT loaded");
+//     }
+// })
+// promise.then(value => console.log(value))
+//     .catch(error => console.log(error))
+
+// //Example 2 - Only one outcome using arrow function
+// const promise2 = new Promise(resolve => {
+//     setTimeout(resolve, 5000);
+// })
+// promise2.then(() => console.log("Thanks for waiting"));
+
+// //Example 3 - Stored as function expression with parameter
+// const wait = time => new Promise(resolve => {
+//     setTimeout(resolve, time);
+// })
+// wait(3000).then(() => console.log(`Thanks for waiting 1`));
+
+//Async
+//Example 1
+// async function loadFile() {
+//     let fileLoaded = true;  
+//     if(fileLoaded) {
+//         return "File loaded";
+//     }
+//     else {
+//         throw "File NOT loaded";
+//     }
+// }
+// loadFile().then(value => console.log(value))
+//     .catch(error => console.log(error))
+
+// //Example 2
+// function loadFile2() {
+//     let fileLoaded = false;  
+//     if(fileLoaded) {
+//         return Promise.resolve("File loaded");
+//     }
+//     else {
+//         return Promise.reject("File NOT loaded");
+//     }
+// }
+// loadFile2().then(value => console.log(value))
+//     .catch(error => console.log(error))
+
+//Await
+async function loadFile() {
+    let fileLoaded = false;  
+    if(fileLoaded) {
+        return "File loaded";
+    }
+    else {
+        throw "File NOT loaded";
+    }
+}
+
+//For displaying - await must be enclose in an async function
+async function startProcess() { 
+    try{ //Required when promise was failed
+        let message = await loadFile(); //Replaces then() and catch()
+        console.log(message);
+    }
+    catch(error) {
+        console.log(error);
+    }
+}
+startProcess();
