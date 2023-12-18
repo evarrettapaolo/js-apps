@@ -769,7 +769,7 @@
 // wait(3000).then(() => console.log(`Thanks for waiting 1`));
 
 //Async
-//Example 1
+// Example 1
 // async function loadFile() {
 //     let fileLoaded = true;  
 //     if(fileLoaded) {
@@ -819,19 +819,21 @@
 
 
 //ES6 Modules
-// import { PI, getCircumference, getArea } from "./math_util.js";
+// // import { PI, getCircumference, getArea } from "./math_util.js";
 // import * as MathUtl from "./math_util.js"; //Alias or namespace added
 
+// // console.log(PI);
 // console.log(MathUtl.PI); //Using the namespace
-// console.log(PI);
 
-// let circumference = getCircumference(10);
+// // let circumference = getCircumference(10);
+// let circumference = MathUtl.getCircumference(10);
 // console.log(circumference);
 
-// let area = getArea(10);
+// // let area = getArea(10);
+// let area = MathUtl.getArea(10);
 // console.log(area);
 
-//DOM
+// DOM
 // console.log(document.title);
 // console.log(document.URL);
 
@@ -841,21 +843,41 @@
 
 //Element Selector
 //Get using Id attribute
-let element = document.querySelector("#myTitle");
-console.log(element.innerHTML);
+// let element = document.querySelector("#myTitle");
+// console.log(element.innerHTML);
 
-//Get using name attribute
-let fruits = document.querySelectorAll("input[name='fruits']")
-fruits.forEach(fruit => {
-    if(fruit.checked) {
-        console.log(fruit.value);
-    }
-})
+// //Get using name attribute
+// let fruits = document.querySelectorAll("input[name='fruits']")
+// fruits.forEach(fruit => {
+//     if(fruit.checked) {
+//         console.log(fruit.value);
+//     }
+// })
 
-//Get using tag type
-let vegetables = document.querySelectorAll("li");
-vegetables[1].style.backgroundColor = "lightpink"
+// //Get using tag type
+// let vegetables = document.querySelectorAll("li");
+// vegetables[1].style.backgroundColor = "lightpink"
 
-//Get using class name
-let desserts = document.querySelectorAll(".desserts");
-desserts[0].style.backgroundColor = "lightgreen";
+// //Get using class name
+// let desserts = document.querySelectorAll(".desserts");
+// desserts[0].style.backgroundColor = "lightgreen";
+
+//DOM Traversal
+// let element = document.body;
+// let element = document.querySelector("#vegetables");
+// let children = Array.from(element.children);
+
+// children.forEach(child => child.style.backgroundColor = 'lightgreen');
+
+//Add or Change HTML Elements
+// const nameTag = document.createElement('h1');
+// nameTag.innerText = window.prompt("Enter your name");
+
+// document.body.append(nameTag);
+
+const myList = document.querySelector('#fruit');
+const listItem = document.createElement('li');
+listItem.textContent = 'Mango';
+// myList.append(listItem);
+// myList.prepend(listItem);
+myList.insertBefore(listItem, myList.getElementsByTagName('li')[1]);
