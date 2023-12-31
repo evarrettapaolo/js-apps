@@ -1,0 +1,34 @@
+body {
+  background-color: lightseagreen;
+}
+
+.timerBtn {
+  width: 80px;
+  height: 30px;
+  border: 3px solid;
+  border-radius: 12px;
+  background-color: darkolivegreen;
+  color: whitesmoke;
+  cursor: pointer;
+  font-family: consolas;
+}
+
+.timerBtn:active {
+  background-color: blue;
+  box-shadow: 0px 0px 5px;
+}
+
+#timeDisplay {
+  font-size: 75px;
+  color: greenyellow;
+  font-family: consolas;
+
+}
+
+.timeContainer {
+  text-align: center;
+  border: 3px solid;
+  padding: 20px 20px;
+  border-radius: 25px;
+  background-color: #222222;
+}

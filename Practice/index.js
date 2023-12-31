@@ -866,18 +866,247 @@
 // let element = document.body;
 // let element = document.querySelector("#vegetables");
 // let children = Array.from(element.children);
-
 // children.forEach(child => child.style.backgroundColor = 'lightgreen');
 
 //Add or Change HTML Elements
 // const nameTag = document.createElement('h1');
 // nameTag.innerText = window.prompt("Enter your name");
-
 // document.body.append(nameTag);
+// const myList = document.querySelector('#fruit');
+// const listItem = document.createElement('li');
+// listItem.textContent = 'Mango';
+// // myList.append(listItem);
+// // myList.prepend(listItem);
+// myList.insertBefore(listItem, myList.getElementsByTagName('li')[1]);
 
-const myList = document.querySelector('#fruit');
-const listItem = document.createElement('li');
-listItem.textContent = 'Mango';
-// myList.append(listItem);
-// myList.prepend(listItem);
-myList.insertBefore(listItem, myList.getElementsByTagName('li')[1]);
+//Add or Change CSS Properties
+// const title = document.getElementById('myTitle');
+// title.style.backgroundColor = "rgba(50,200,250,0.3)";
+// title.style.fontFamily = 'consolas';
+// title.style.textAlign = 'center';
+// title.style.border = '2px solid';
+// title.style.display = 'block';
+
+//Event
+// const element = document.querySelector('#myButton');
+// const element = document.body;
+// const element = document.querySelector('#myText');
+// const element = document.querySelector("#myDiv");
+// element.onclick = doSomething;
+// element.onload = doSomething;
+// element.onchange = doSomething;
+// element.onmouseover = doSomething;
+// element.onmouseout = doSomethingElse;
+// element.onmousedown = doSomethingElse;
+// element.onmouseup = doSomething;
+// function doSomething() {
+//   // alert("You did something");
+//   element.style.backgroundColor = 'red';
+// }
+// function doSomethingElse() {
+//   // alert("You did something");
+//   element.style.backgroundColor = 'lightgreen';
+// }
+
+//AddEventListener
+// const innerDiv = document.querySelector('#innerDiv');
+// const outerDiv = document.querySelector('#outerDiv');
+// innerDiv.addEventListener('mouseover', changeRed);
+// innerDiv.addEventListener('mouseout', changeGreen);
+// function changeRed() {
+//   innerDiv.style.backgroundColor = 'red';
+// }
+// function changeGreen() {
+//   innerDiv.style.backgroundColor = 'lightgreen';
+// }
+// innerDiv.addEventListener('click', changeBlue);
+// outerDiv.addEventListener('click', changeBlue, true);
+// function changeBlue() {
+//   alert(`You selected ${this.id}`)
+//   this.style.backgroundColor = 'lightblue';
+// }
+
+//Show or Hide HTML Elements
+// const myButton = document.querySelector('#myButton');
+// const myImage = document.querySelector('#myImage');
+
+// myButton.addEventListener('click', () => {
+//   console.log(myImage.style.visibility);
+//   if(myImage.style.visibility == 'hidden') {
+//     myImage.style.visibility = 'visible';
+//   }
+//   else {
+//     myImage.style.visibility = 'hidden';
+//   }
+// })
+
+//Detect Key Presses
+// const myDiv = document.querySelector('#myDiv');
+// window.addEventListener('keydown', move);
+
+// let x = 0;
+// let y = 0;
+
+// function move() {
+//   switch(event.key) {
+//     case 'ArrowDown':
+//       y += 5;
+//       myDiv.style.top = y + "px";
+//       break;
+//     case 'ArrowUp':
+//       y -= 5;
+//       myDiv.style.top = y + "px";
+//       break;
+//     case 'ArrowLeft':
+//       x -= 5;
+//       myDiv.style.left = x + "px";
+//       break;
+//     case 'ArrowRight':
+//       x += 5;
+//       myDiv.style.left = x + "px";
+//       break;
+
+//   }
+// }
+
+//Animations
+// const myButton = document.querySelector("#myButton");
+// const myAnimation = document.querySelector("#myDiv");
+// myButton.addEventListener("click", begin);
+//scale
+// function begin() {
+//   let timerId = null;
+//   let scaleX = 1;
+//   let scaleY = 1;
+  
+//   timerId = setInterval(frame, 5);
+
+//   function frame() {
+//     if(scaleX <= 0.1) {
+//       clearInterval(timerId);
+//     }
+//     else {
+//       scaleX -= 0.01;
+//       scaleY -= 0.01;
+//       myAnimation.style.transform = "scale("+scaleX+", "+scaleY+")";
+//       myAnimation.style.transform = "scale("+scaleX+", "+scaleY+")";
+//     }
+//   }
+// }
+//rotate
+// function begin() {
+//   let timerId = null;
+//   let degrees = 0;
+//   let x = 0;
+//   let y = 0;
+  
+//   timerId = setInterval(frame, 5);
+
+//   function frame() {
+//     if(x >= 200) {
+//       clearInterval(timerId);
+//     }
+//     else {
+//       degrees += 100000;
+//       x++;
+//       y++;
+//       myAnimation.style.left = x + "px";
+//       myAnimation.style.top = y + "px";
+//       myAnimation.style.transform = "rotateZ("+degrees+"deg)";
+//     }
+//   }
+// }
+// slide diagonally
+// function begin() {
+//   let timerId = null;
+//   let x = 0;
+//   let y = 0;
+
+//   timerId = setInterval(frame, 5);
+
+//   function frame() {
+//     if(x >= 200) {
+//       clearInterval(timerId);
+//     }
+//     else {
+//       x += 1;
+//       y += 1;
+//       myAnimation.style.left = x + "px";
+//       myAnimation.style.top = y + "px";
+//     }
+//   }
+// }
+
+//canvas API
+// let canvas = document.querySelector("#myCanvas");
+// let context = canvas.getContext("2d");
+//Draw
+// context.strokeStyle = "yellow";
+// context.lineWidth = 10;
+// context.beginPath(); 
+// context.moveTo(0, 0);  
+// context.lineTo(250, 250);
+// context.lineTo(250, 500);
+// context.moveTo(500, 0)
+// context.lineTo(250, 250);
+// context.stroke();
+//Draw Triangle
+// context.beginPath();
+// context.moveTo(250, 0);
+// context.lineTo(0, 250);
+// context.lineTo(500, 250);
+// context.lineTo(250, 0)
+// context.strokeStyle = "yellow";
+// context.lineWidth = 10;
+// context.stroke();
+// context.fillStyle = "grey";
+// context.fill();
+//Draw Rectangle
+// context.fillStyle = "black";
+// context.fillRect(0, 0 ,250, 250);
+// context.strokeStyle = "black";
+// context.strokeRect(0, 0, 250, 250)
+// context.fillStyle = "yellow";
+// context.fillRect(0, 250 ,250, 250);
+// context.strokeStyle = "black";
+// context.strokeRect(0, 250, 250, 250)
+// context.fillStyle = "green";
+// context.fillRect(250, 0 ,250, 250);
+// context.strokeStyle = "black";
+// context.strokeRect(0, 0, 250, 250)
+// context.fillStyle = "red";
+// context.fillRect(250, 250 ,250, 250);
+// context.strokeStyle = "black";
+// context.strokeRect(0, 250, 250, 250)
+//Draw Circle
+// context.fillStyle = "skyblue";
+// context.lineWidth = 5;
+// context.strokeStyle = "yellow";
+// context.beginPath();
+// context.arc(250, 250, 200, 0, 2 * Math.PI);
+// context.stroke();
+// context.fill();
+//Draw Text
+// context.font = "50px MV Boli";
+// context.fillStyle = "purple";
+// context.textAlign = "center";
+// context.fillText("You Win!", canvas.width / 2, canvas.height / 2);
+
+//Window
+// console.dir(window)
+// console.log(window.scrollX);
+// console.log(window.scrollY);
+// console.log(window.location.href);
+// window.location.href = "https://google.com";
+// console.log(window.location.hostname);
+// const myButton = document.querySelector("#myButton");
+// myButton.addEventListener("click", () => window.print());
+
+//Cookies
+// console.log(navigator.cookieEnabled);
+
+// document.cookie = "firstName=Patrick; expires=Sun, 1 January 2030 12:00:00 UTC; path=/";
+// document.cookie = "lastName=Star; expires=Sun, 1 January 2000 12:00:00 UTC; path=/";
+// console.log(document.cookie);
+// 
+
