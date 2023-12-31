@@ -1,0 +1,35 @@
+body {
+  background-color: lightseagreen;
+}
+
+#gameDiv {
+  font-family: consolas;
+  border: 3px solid;
+  border-radius: 25px;
+  padding: 10px;
+  text-align: center;
+  background-color: darkcyan;
+}
+
+.choiceBtn {
+  line-height: 30px;
+  width: 150px;
+  border: solid 3px black;
+  box-shadow: 0 0 5px black;
+  border-radius: 30px;
+  background-color: darkolivegreen;
+}
+
+.choiceBtn:active {
+  box-shadow: 0 0 3px white;
+}
+
+#playerText {
+  color: blue;
+  text-shadow:0 0 15px whitesmoke;
+}
+
+#computerText {
+  color: red;
+  text-shadow:0 0 15px whitesmoke;
+}
