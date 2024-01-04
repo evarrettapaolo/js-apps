@@ -1,3 +1,4 @@
+//variables
 const gameBoard = document.querySelector("#gameBoard");
 const ctx = gameBoard.getContext("2d");
 const scoreText = document.querySelector("#scoreText");
@@ -23,6 +24,7 @@ let snake = [
   {x:0, y:0}
 ];
 
+//event listeners and method calls
 window.addEventListener("keydown", changeDirection);
 resetBtn.addEventListener("click", resetGame);
 
@@ -62,8 +64,6 @@ function createFood() {
   }
   foodX = randomFood(0, gameWidth - unitSize);
   foodY = randomFood(0, gameWidth - unitSize);
-  // console.log(foodX);
-  // console.log(foodY);
 };
 function drawFood() {
   ctx.fillStyle = foodColor;
